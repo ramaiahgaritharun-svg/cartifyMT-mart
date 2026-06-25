@@ -156,17 +156,3 @@
     height: 140px;
   }
 }
-
-.edit-btn {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  margin-right: 8px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.edit-btn:hover {
-  background: #1d4ed8;
-}

@@ -26,7 +26,7 @@ function Login() {
 
         localStorage.setItem("token", token);
 
-        // decode JWT
+        // DECODE JWT
         const payload = JSON.parse(atob(token.split(".")[1]));
         const role = payload.role;
 

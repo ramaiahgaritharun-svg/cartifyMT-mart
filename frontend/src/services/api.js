@@ -4,7 +4,7 @@ const api = axios.create({
   baseURL: "http://localhost:8000/api/",
 });
 
-// 🔐 Attach token automatically to every request
+// Attach token automatically to every request
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
@@ -20,7 +20,7 @@ api.interceptors.request.use(
   }
 );
 
-// 🔄 Handle token errors globally
+//  Handle token errors globally
 api.interceptors.response.use(
   (response) => response,
   (error) => {

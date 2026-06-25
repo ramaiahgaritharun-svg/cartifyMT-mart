@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 function Cart() {
   const [cart, setCart] = useState([]);
 
-  // 🛒 FETCH CART
+  // FETCH CART
   const fetchCart = () => {
     api.get("cart/list/")
       .then((res) => {
         console.log("CART RESPONSE:", res.data);
 
-        // ✅ SAFE NORMALIZATION
+        //  NORMALIZATION
         const data = Array.isArray(res.data)
           ? res.data
           : res.data?.results || res.data?.cart || [];
@@ -29,7 +29,7 @@ function Cart() {
     fetchCart();
   }, []);
 
-  // ➕ INCREASE QTY
+  //  INCREASE PRODUCT QUANTITY
   const increaseQty = (id) => {
     api.post("cart/update-quantity/", {
       cart_id: id,
@@ -39,7 +39,7 @@ function Cart() {
       .catch(console.log);
   };
 
-  // ➖ DECREASE QTY
+  //  DECREASE PRODUCT QUANTITY
   const decreaseQty = (id) => {
     api.post("cart/update-quantity/", {
       cart_id: id,
@@ -49,14 +49,14 @@ function Cart() {
       .catch(console.log);
   };
 
-  // ❌ REMOVE ITEM
+  //  REMOVE ITEM FROM CART
   const removeItem = (id) => {
     api.delete(`cart/delete/${id}/`)
       .then(fetchCart)
       .catch(console.log);
   };
 
-  // 💰 SAFE TOTAL PRICE
+  // TOTAL PRICE BASED ON CART ITEMS
   const totalPrice = (Array.isArray(cart) ? cart : []).reduce(
     (acc, item) =>
       acc + (item.quantity * (item.product_detail?.price || 0)),
@@ -78,14 +78,11 @@ function Cart() {
           {cart.map((item) => (
             <div key={item.id} className="cart-item">
 
-              {/* IMAGE (FIXED GLOBAL) */}
               <img
                 src={getImage(item.product_detail?.image)}
                 alt={item.product_detail?.name}
                 width="100"
               />
-
-              {/* DETAILS */}
               <div>
 
                 <h3>

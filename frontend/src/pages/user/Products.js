@@ -13,7 +13,7 @@ function Products() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [loadingProduct, setLoadingProduct] = useState(false);
 
-  // ================= FETCH PRODUCTS =================
+  //  FETCH PRODUCTS 
   const fetchProducts = () => {
     api
       .get("products/products/")
@@ -26,7 +26,7 @@ function Products() {
       });
   };
 
-  // ================= FETCH CATEGORIES =================
+  //  FETCH CATEGORIES 
   const fetchCategories = () => {
     api
       .get("products/categories/")
@@ -41,7 +41,7 @@ function Products() {
     fetchCategories();
   }, []);
 
-  // ================= SEARCH =================
+  //  SEARCH PRODUCTS
   const searchProducts = () => {
     api
       .get(`products/search/?q=${search}&category=${selectedCategory}`)
@@ -51,7 +51,6 @@ function Products() {
       .catch((err) => console.log(err));
   };
 
-  // ================= OPEN PRODUCT DETAILS =================
   const openProduct = (id) => {
     setLoadingProduct(true);
 
@@ -64,12 +63,11 @@ function Products() {
       .finally(() => setLoadingProduct(false));
   };
 
-  // ================= CLOSE DETAILS =================
   const closeDetails = () => {
     setSelectedProduct(null);
   };
 
-  // ================= ADD TO CART =================
+  //  ADD TO CART 
   const addToCart = (id) => {
     api
       .post("cart/add/", {
@@ -85,7 +83,7 @@ function Products() {
 
       <h1 className="products-title">Products 🛍️</h1>
 
-      {/* ================= SEARCH ================= */}
+      {/*SEARCH PRODUCTS */}
       <div className="search-filter">
 
         <input
@@ -114,9 +112,8 @@ function Products() {
 
       </div>
 
-      {/* ================= PRODUCT LIST ================= */}
+      {/*  PRODUCT LIST  */}
       {selectedProduct ? (
-        // ================= PRODUCT DETAILS VIEW =================
         <div className="product-details">
 
           <button onClick={closeDetails}>
@@ -151,7 +148,7 @@ function Products() {
 
         </div>
       ) : (
-        // ================= PRODUCT GRID =================
+   
         <>
           {products.length === 0 ? (
             <p>No products found ❌</p>

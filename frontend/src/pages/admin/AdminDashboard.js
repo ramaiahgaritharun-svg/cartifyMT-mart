@@ -9,8 +9,7 @@ function AdminAnalytics() {
     orders: 0,
     revenue: 0,
   });
-
-  // 📊 FETCH ANALYTICS (FIXED PATH)
+  
   const fetchAnalytics = () => {
     api.get("/admin/analytics/")
       .then((res) => {

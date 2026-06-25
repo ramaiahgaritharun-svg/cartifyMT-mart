@@ -12,7 +12,6 @@ function AdminAnalytics() {
 
   const [loading, setLoading] = useState(true);
 
-  // 📊 FETCH ANALYTICS
   const fetchAnalytics = () => {
     setLoading(true);
 

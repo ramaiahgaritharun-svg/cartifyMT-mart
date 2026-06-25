@@ -18,7 +18,7 @@ function Checkout() {
     payment_method: "cod",
   });
 
-  // 🛒 FETCH CART
+  // FETCH CART
   const fetchCart = async () => {
     try {
       const res = await api.get("cart/list/");
@@ -42,15 +42,13 @@ function Checkout() {
     fetchCart();
   }, []);
 
-  // FORM CHANGE
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
-
-  // TOTAL PRICE
+  
   const total = cart.reduce(
     (sum, item) =>
       sum +

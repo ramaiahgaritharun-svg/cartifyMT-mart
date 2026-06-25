@@ -15,7 +15,7 @@ function AdminProducts() {
     image: null,
   });
 
-  // ================= FETCH PRODUCTS =================
+  // FETCH PRODUCTS
   const fetchProducts = () => {
     api
       .get("products/")
@@ -26,7 +26,7 @@ function AdminProducts() {
       .catch((err) => console.log(err));
   };
 
-  // ================= FETCH CATEGORIES =================
+  // FETCH CATEGORIES 
   const fetchCategories = () => {
     api
       .get("products/categories/")
@@ -42,7 +42,7 @@ function AdminProducts() {
     fetchCategories();
   }, []);
 
-  // ================= HANDLE INPUT =================
+  //HANDLE INPUT 
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -50,7 +50,7 @@ function AdminProducts() {
     });
   };
 
-  // ================= ADD PRODUCT =================
+  // ADD PRODUCT 
   const addProduct = () => {
     const formData = new FormData();
 
@@ -89,7 +89,7 @@ function AdminProducts() {
       });
   };
 
-  // ================= DELETE PRODUCT =================
+  //DELETE PRODUCT 
   const deleteProduct = (id) => {
     api
       .delete(`products/delete/${id}/`)
@@ -105,7 +105,7 @@ function AdminProducts() {
 
       <h1>Admin Product Panel 🛍️</h1>
 
-      {/* ================= PRODUCT FORM ================= */}
+      {/*--------PRODUCT FORM-------- */}
       <div className="admin-form">
 
         <input
@@ -131,7 +131,7 @@ function AdminProducts() {
           onChange={handleChange}
         />
 
-        {/* CATEGORY SELECT (FROM BACKEND) */}
+        {/* SELECT CATEGORY */}
         <select
           name="category"
           value={form.category}
@@ -173,7 +173,7 @@ function AdminProducts() {
 
       <hr />
 
-      {/* ================= PRODUCT LIST ================= */}
+      {/*PRODUCT LIST */}
       <div className="product-list">
 
         {products.map((product) => (

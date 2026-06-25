@@ -6,7 +6,7 @@ import { getImage } from "../../utils/imageHelper";
 function Orders() {
   const [orders, setOrders] = useState([]);
 
-  // 📦 FETCH ORDERS
+  // FETCH ORDERS
   const fetchOrders = async () => {
   try {
     const res = await api.get("orders/list/");
@@ -41,12 +41,11 @@ function Orders() {
         orders.map((order) => (
           <div className="order-card" key={order.id}>
 
-            {/* PRODUCT IMAGE */}
             <img
               src={getImage(order.product_detail?.image)}
               alt={order.product_detail?.name}
             />
-            {/* DETAILS */}
+
             <div className="order-info">
 
               <h3>{order.product_detail?.name}</h3>
@@ -61,12 +60,10 @@ function Orders() {
                   order.quantity * order.product_detail?.price}
               </p>
 
-              {/* STATUS */}
               <p className={`status ${order.status}`}>
                 Status: {order.status}
               </p>
 
-              {/* PAYMENT METHOD */}
               <p>Payment: {order.payment_method}</p>
 
             </div>

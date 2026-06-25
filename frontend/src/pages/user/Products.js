@@ -16,7 +16,7 @@ function Products() {
   //  FETCH PRODUCTS 
   const fetchProducts = () => {
     api
-      .get("products/products/")
+      .get("products/")
       .then((res) => {
         setProducts(Array.isArray(res.data) ? res.data : res.data?.results || []);
       })
@@ -172,10 +172,6 @@ function Products() {
                   <p>₹{product.price}</p>
 
                   <p>{product.description}</p>
-
-                  <button onClick={() => openProduct(product.id)}>
-                    View Details
-                  </button>
 
                   <button onClick={() => addToCart(product.id)}>
                     Add to Cart

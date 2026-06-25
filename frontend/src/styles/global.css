@@ -1,0 +1,53 @@
+.footer {
+  background: #111;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-links p {
+  cursor: pointer;
+  margin: 5px 0;
+  color: #ccc;
+}
+
+.footer-links p:hover {
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: white;
+  padding: 15px 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links p {
+  cursor: pointer;
+  color: #ccc;
+}
+
+.nav-links p:hover {
+  color: white;
+}
+
+.navbar button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

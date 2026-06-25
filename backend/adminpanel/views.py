@@ -13,11 +13,10 @@ class AnalyticsView(APIView):
 
     def get(self, request):
 
-        revenue = (
-            Order.objects.aggregate(
-                total=Sum("total_price")
-            )["total"] or 0
-        )
+        total_revenue = Order.objects.filter(status="delivered").aggregate(
+            total=Sum("total_price")
+        )["total"] or 0
+        
 
         delivered_orders = Order.objects.filter(
             status="delivered"
@@ -31,7 +30,7 @@ class AnalyticsView(APIView):
             "users": User.objects.count(),
             "products": Product.objects.count(),
             "orders": Order.objects.count(),
-            "revenue": revenue,
+            "revenue":  total_revenue,
             "delivered": delivered_orders,
             "cancelled": cancelled_orders,
         })

@@ -177,6 +177,10 @@ function Products() {
                     Add to Cart
                   </button>
 
+                  <button onClick={() => openProduct(product.id)}>
+                    View Product
+                  </button>
+
                 </div>
               ))}
 

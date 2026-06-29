@@ -1,1 +1,0 @@
-web: gunicorn cartify_mart.wsgi:application

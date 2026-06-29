@@ -107,3 +107,6 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 AUTH_USER_MODEL = 'users.User'
+
+
+ALLOWED_HOSTS = ["*"]

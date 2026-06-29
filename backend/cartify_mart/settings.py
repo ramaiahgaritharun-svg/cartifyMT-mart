@@ -105,7 +105,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    "https://your-vercel-app.vercel.app",
 ]
 
 AUTH_USER_MODEL = 'users.User'

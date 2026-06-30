@@ -127,3 +127,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 CSRF_TRUSTED_ORIGINS = [
     "https://cartifymt.vercel.app",
 ]
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

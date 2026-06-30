@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://cartifymt-mart-production.up.railway.app",
+  baseURL: "https://cartifymt.up.railway.app/",
 });
 
 // Attach token automatically to every request

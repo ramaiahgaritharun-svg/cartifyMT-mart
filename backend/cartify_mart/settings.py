@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-your-key"
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -52,7 +52,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "cartify_mart.urls"
 
-# Templates (REQUIRED)
+# Templates 
 
 TEMPLATES = [
     {

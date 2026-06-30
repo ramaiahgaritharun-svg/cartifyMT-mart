@@ -1,29 +1,18 @@
 from django.contrib import admin
-from .models import Order
+from .models import Order, OrderItem
 
-@admin.register(Order)
+
+class OrderItemInline(admin.TabularInline):
+    model = OrderItem
+    extra = 0
+
+
 class OrderAdmin(admin.ModelAdmin):
-    list_display = (
-        "id",
-        "user",
-        "product",
-        "quantity",
-        "total_price",
-        "status",
-        "created_at",
-    )
+    list_display = ['id', 'user', 'total_price', 'status', 'payment_method', 'created_at']
+    list_filter = ['status', 'payment_method', 'created_at']
+    search_fields = ['user__username', 'full_name', 'phone']
+    inlines = [OrderItemInline]
 
-    list_filter = ("status",)
 
-    search_fields = (
-        "user__username",
-        "product__name",
-    )
-
-    actions = ["mark_as_cancelled", "mark_as_shipped"]
-
-    def mark_as_cancelled(self, request, queryset):
-        queryset.update(status="cancelled")
-
-    def mark_as_shipped(self, request, queryset):
-        queryset.update(status="shipped")
+admin.site.register(Order, OrderAdmin)
+admin.site.register(OrderItem)

@@ -150,7 +150,7 @@ SIMPLE_JWT = {
 # CORS
 
 CORS_ALLOWED_ORIGINS = [
-    "https://cartifymt.vercel.app",
+    "https://cartifymt.vercel.app/products",
 ]
 
 CORS_ALLOW_CREDENTIALS = True

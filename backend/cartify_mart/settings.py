@@ -150,7 +150,7 @@ SIMPLE_JWT = {
 # CORS
 
 CORS_ALLOWED_ORIGINS = [
-    "https://cartifymt.vercel.app/",
+    "https://cartifymt.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -179,5 +179,5 @@ CORS_ALLOW_HEADERS = [
 # CSRF
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://cartifymt.vercel.app/",
+    "https://cartifymt.vercel.app",
 ]
